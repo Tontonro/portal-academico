@@ -1,0 +1,15 @@
+{{!-- Área exclusiva de usuários autenticados. --}}
+<section class="boas-vindas">
+  <p class="etiqueta">ÁREA AUTENTICADA</p>
+  <h1>Olá, {{usuario.nome}}!</h1>
+  <p>Esta página está disponível somente após o login.</p>
+</section>
+<section class="grade">
+  <article class="cartao"><h2>Minha conta</h2><p>{{usuario.email}}</p><span class="selo">{{usuario.perfil}}</span></article>
+  <article class="cartao"><h2>Atividades</h2><p>Consulte atividades acadêmicas e avisos recentes.</p></article>
+  <article class="cartao"><h2>Segurança</h2><p>A sessão mantém seu login entre as requisições.</p></article>
+</section>
+{{#if usuario.ehAdministrador}}
+  <a class="botao-secundario" href="/administracao">Abrir administração</a>
+{{/if}}
+<form action="/logout" method="post"><button class="perigo" type="submit">Sair</button></form>

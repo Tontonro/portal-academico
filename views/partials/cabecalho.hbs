@@ -1,0 +1,12 @@
+<header class="cabecalho">
+  {{!-- Os links mudam conforme a sessão e o perfil do usuário. --}}
+  <a class="marca" href="{{#if usuario}}/painel{{else}}/login{{/if}}">Portal Acadêmico</a>
+  <nav aria-label="Navegação principal">
+    {{#if usuario}}
+      <a href="/painel">Painel</a>
+      {{#if usuario.ehAdministrador}}<a href="/administracao">Administração</a>{{/if}}
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+</header>
